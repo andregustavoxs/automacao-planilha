@@ -59,20 +59,39 @@ pip install -r requirements.txt
 
 ## Como Usar
 
-### 1. Preparar os arquivos
+### Opção 1: Painel Interativo (Recomendado)
 
-Certifique-se de que a planilha de classificação definitiva está na pasta `planilha_original/` com o nome correto.
+1. **Execute o arquivo batch**:
+   ```bash
+   executar_app.bat
+   ```
 
-### 2. Executar o script
+2. **Ou execute manualmente**:
+   ```bash
+   # Ativar o ambiente virtual
+   .venv\Scripts\activate
 
-```bash
-# No terminal, dentro do diretório do projeto
-python gerar_lista_convocacao.py
-```
+   # Iniciar o painel Streamlit
+   streamlit run app.py
+   ```
 
-### 3. Resultado
+3. **Use a interface web**:
+   - Faça upload da planilha de classificação
+   - Configure as abas se necessário
+   - Clique em "Processar"
+   - Baixe o resultado
 
-O arquivo gerado estará em: `resultado/lista_convocacao_gerada.xlsx`
+### Opção 2: Script em Linha de Comando
+
+1. **Preparar os arquivos**: Certifique-se de que a planilha de classificação definitiva está na pasta `planilha_original/` com o nome correto.
+
+2. **Executar o script**:
+   ```bash
+   # No terminal, dentro do diretório do projeto
+   python gerar_lista_convocacao.py
+   ```
+
+3. **Resultado**: O arquivo gerado estará em: `resultado/lista_convocacao_gerada.xlsx`
 
 ### Estrutura da planilha gerada
 
@@ -116,11 +135,20 @@ Ao final da execução, o sistema exibe estatísticas completas da lista gerada:
 - Quantidade por nível e tipo combinados
 - Quantidade por curso (top 10)
 
+## Funcionalidades
+
+- ✅ Processamento automático seguindo regras de cotas
+- ✅ Interface web interativa com Streamlit
+- ✅ Upload de arquivos via navegador
+- ✅ Visualização de estatísticas em tempo real
+- ✅ Download direto do resultado processado
+- ✅ Suporte para múltiplos níveis (Superior e Técnico)
+
 ## Próximas Versões
 
-- Interface gráfica (GUI)
 - Integração com o SGE (Sistema de Gestão de Estagiários)
 - Exportação em múltiplos formatos (PDF, CSV)
+- Validação automática de dados
 
 ## Autor
 
